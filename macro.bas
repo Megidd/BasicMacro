@@ -5,7 +5,7 @@ Sub ConvertTable()
 	if exists then sheets.removeByName("Imported")
 	sheet = doc.createInstance("com.sun.star.sheet.Spreadsheet")
 	sheets.insertByName("Imported", sheet)
-	
+
 	Dim oSubst As Object, Home As String
 	oSubst = CreateUnoService("com.sun.star.util.PathSubstitution")
 	Home = oSubst.getSubstituteVariableValue("$(home)")
@@ -24,7 +24,7 @@ Sub ConvertTable()
 		FilePath = oFilePicker.Files(0)
 	End If
 	Print FilePath
-	
+
 	Dim CsvURL As String 'the .csv source address
 	Dim Filter As String
 	Dim oSheet As Object 'the target sheet in the document
@@ -32,7 +32,7 @@ Sub ConvertTable()
 	CsvURL = FilePath
 	'csv file read options
 	Filter = "44,34,65535,1,1/1"
-	
+
 	'import creating a link between the sheet and the .csv source
 	oSheet.link(CsvURL, "", "Text - txt - csv (StarCalc)", _
 	Filter, com.sun.star.sheet.SheetLinkMode.VALUE)
