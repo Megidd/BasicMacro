@@ -31,7 +31,7 @@ Sub ConvertTable()
 	oSheet = sheets.getByName("Converted")
 	CsvURL = FilePath
 	'csv file read options
-	Filter = "44,34,65535,1,1/1/2/1/3/1/4/1/5/1/6/1/7/1/8/1/9/1/10/1/11/1"
+	Filter = "44,34,65535,1,1/1"
 	
 	'import creating a link between the sheet and the .csv source
 	oSheet.link(CsvURL, "", "Text - txt - csv (StarCalc)", _
