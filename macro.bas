@@ -1,10 +1,10 @@
 Sub ConvertTable()
 	doc = ThisComponent
 	sheets = doc.Sheets
-	exists = sheets.hasByName("Converted")
-	if exists then sheets.removeByName("Converted")
+	exists = sheets.hasByName("Imported")
+	if exists then sheets.removeByName("Imported")
 	sheet = doc.createInstance("com.sun.star.sheet.Spreadsheet")
-	sheets.insertByName("Converted", sheet)
+	sheets.insertByName("Imported", sheet)
 	
 	Dim oSubst As Object, Home As String
 	oSubst = CreateUnoService("com.sun.star.util.PathSubstitution")
@@ -28,7 +28,7 @@ Sub ConvertTable()
 	Dim CsvURL As String 'the .csv source address
 	Dim Filter As String
 	Dim oSheet As Object 'the target sheet in the document
-	oSheet = sheets.getByName("Converted")
+	oSheet = sheets.getByName("Imported")
 	CsvURL = FilePath
 	'csv file read options
 	Filter = "44,34,65535,1,1/1"
